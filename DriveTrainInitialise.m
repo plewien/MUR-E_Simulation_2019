@@ -23,7 +23,7 @@ Lq = 130e-6;           % H
 RotorInertia = 256;    % kg cm^2
 
 %% Controller Parameters
-Pmax = 80e3;    % W
+Pmax = 40e3;    % W
 Tmax = 50;      % Nm
 PM = 0.04;      % Wb
 
