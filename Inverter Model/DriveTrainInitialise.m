@@ -20,7 +20,7 @@ Vnom = 450;               % V
 PolePairs = 10;
 Ld = 125e-6;           % H
 Lq = 130e-6;           % H
-RotorInertia = 256;    % kg cm^2
+RotorInertia = 256e3;  % g cm^2
 
 %% Controller Parameters
 Pmax = 40e3;    % W
