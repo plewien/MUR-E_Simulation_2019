@@ -1,8 +1,8 @@
 %% Simulation Time parameters
-Ts = 2e-6;    % Fundamental sample time
-fsw = 2e3;     % Switching frequency (Hz)
-fc = fsw*10;  % Control loop frequency (Hz)
-Tsc = 1/fc;    % Control loop sample time
+Ts = 2e-6;      % Fundamental sample time
+fsw = 2e3;      % Switching frequency (Hz)
+fc = fsw*10;    % Control loop frequency (Hz)
+Tsc = 1/fc;     % Control loop sample time
 
 %% IGBT Parameters (to check)
 Vf = 1.45;                % V
@@ -23,9 +23,9 @@ Lq = 130e-6;           % H
 RotorInertia = 256e3;  % g cm^2
 
 %% Controller Parameters
-Pmax = 40e3;    % W
-Tmax = 50;      % Nm
-PM = 0.04;      % Wb
+Pmax = 40e3;            % W
+Tmax = 50;              % Nm
+PM = 0.04;              % Wb
 
 %% Load Parameters
 J = 0.10;                 % kg*m^2
