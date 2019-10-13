@@ -17,7 +17,7 @@ diode_Ron = 0.001;        % Ohm
 diode_Goff = 1e-5;        % S
 
 %% Accumulator Parameters
-Vnom = 48;               % V
+Vnom = 450;  %48;               % V
 
 %% PMSM Parameters
 PolePairs = 10; p = PolePairs;
@@ -25,16 +25,21 @@ Ld = 125e-6;           % H
 Lq = 130e-6;           % H
 RotorInertia = 256e3;  % g cm^2
 Rs = 0.4;  %1.844; %0.35;             % Ohms
-PM = 0.08; %0.0393;            % Wb
+PM = 0.0393;            % Wb
 
 %% Controller Parameters
 Pmax = 40e3;            % W
 Tmax = 50;              % Nm
 Iq_max = 254.6;         % A (max 60%?)
-Kp = 10;
-Ki = 2;
-Kaw = 100;
-rate = 5;
+rate = 20;
+
+KdI = 20;
+KdP = 30;
+KdAW = 5;
+KqI = 20;
+KqP = 10;
+KqAW = 5;
+
 
 %% Load Parameters
 J = 0.0256;    %2.7818;             % kg*m^2

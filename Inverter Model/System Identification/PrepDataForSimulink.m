@@ -1,5 +1,5 @@
 %% Load Data
-filename = "output_TABLE_1.csv";
+filename = "output_TABLE_4.csv";
 opts = detectImportOptions(filename,'NumHeaderLines',0);
 opts.VariableNamesLine = 1; % row number which has variable names
 opts.VariableUnitsLine = 2; % row number which has units specified
@@ -15,7 +15,6 @@ switch filename
         delay = 20;
         u = [1000, 500, 200]; % [200, 1000, 500];
     otherwise
-        delay = 0;
         u = [0, 0, 0];
 end
 
