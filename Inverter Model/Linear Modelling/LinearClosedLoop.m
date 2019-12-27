@@ -8,14 +8,16 @@ PM = 0.0393;           % Wb
 
 %% Controller Parameters
 Iq_max = 254.6;         % A (max 60%?)
-KdI = 20;
-KdP = 1;
-KqI = 2;
-KqP = 1;
+
+alpha = 10;
+KqP = 0.01;
+KqI = (Rs+KqP)^2/(4*Lq);
+KdP = alpha*(Ld/Lq)*KqP + (alpha*(Ld/Lq) - 1)*Rs;
+KdI = (Rs+KdP)^2/(4*Ld);
 
 %% Simulation Information
 dt = 5e-6;
-tfinal = .001;
+tfinal = .01;
 idref = 0;
 Tref = 1000;
 
@@ -24,6 +26,8 @@ s = tf('s');
 Gcl_d = (KdP*s + KdI)/(Ld*s^2 + (Rs + KdP)*s + KdI);
 Gcl_q = (KqP*s + KqI)/(Lq*s^2 + (Rs + KqP)*s + KqI);
 
+% Gcl_d = KdI/(Ld*s^2 + (Rs + KdP)*s + KdI);
+% Gcl_q = KqI/(Lq*s^2 + (Rs + KqP)*s + KqI);
 
 %% Step Response
 t = (0:dt:tfinal).';
@@ -49,4 +53,6 @@ bode(Gcl_d, Gcl_q);
 
 %% Poles and Zeros
 figure(3);
+
+display(test)
 pzplot(Gcl_d, Gcl_q);

@@ -38,4 +38,6 @@ sim.input = [t, input.'];
 sim.torque = [t, data.AxleTorque];
 sim.speed = [t, data.AxleSpeed];
 
-plot(t, [input.'/20, data.AxleSpeed]);
+plot(t, [input.'/200, data.AxleTorque], 'LineWidth', 1.6);
+xlabel('Time (seconds)');
+legend('Torque Reference', 'Torque Output (Nm)');
